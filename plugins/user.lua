@@ -10,6 +10,22 @@ return {
   --   end,
   -- },
   { "tpope/vim-surround", lazy = false },
+  -- {
+  --   "jackMort/ChatGPT.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("chatgpt").setup({
+  --       keymaps = {
+  --         submit = "<C-q>"
+  --       }
+  --     })
+  --   end,
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-telescope/telescope.nvim"
+  --   }
+  -- },
   {
     "dpayne/CodeGPT.nvim",
     event = "VeryLazy",
