@@ -96,5 +96,11 @@ return {
         }
       }
     }
+  },
+  {
+    "akinsho/toggleterm.nvim",
+    opts = {
+      shell = "/usr/bin/fish"
+    }
   }
 }
