@@ -1,5 +1,13 @@
 -- customize mason plugins
 return {
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      pip = {
+        upgrade_pip = true,
+      },
+    },
+  },
   -- use mason-lspconfig to configure LSP installations
   {
     "williamboman/mason-lspconfig.nvim",

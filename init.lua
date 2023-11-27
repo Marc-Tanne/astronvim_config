@@ -29,7 +29,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true,     -- enable or disable format on save globally
+        enabled = false,     -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -48,6 +48,12 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+    },
+    config = {
+      tsserver = function(opts)
+        opts.root_dir = require("lspconfig.util").root_pattern(".git")
+        return opts
+      end,
     },
   },
   -- Configure require("lazy").setup() options

@@ -74,7 +74,25 @@ return {
           typescriptreact = "nvim-test.runners.jest",
         }
       }
-      -- require("nvim-test.runners.pytest").setup {}
     end
-  }
+  },
+  {
+    'mrjones2014/smart-splits.nvim',
+    event = "VeryLazy",
+    config = function()
+      vim.keymap.set('n', '<C-[>', require('smart-splits').resize_left)
+      vim.keymap.set('n', '<C-;>', require('smart-splits').resize_down)
+      vim.keymap.set('n', '<C-p>', require('smart-splits').resize_up)
+      vim.keymap.set('n', '<C-]>', require('smart-splits').resize_right)
+    end
+  },
+  -- {
+  --   "nvim-telescope/telescope.nvim",
+  --   requires = {
+  --     { "nvim-telescope/telescope-live-grep-args.nvim" },
+  --   },
+  --   config = function()
+  --     require("telescope").load_extension("live_grep_args")
+  --   end
+  -- }
 }
