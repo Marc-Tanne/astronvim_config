@@ -6,6 +6,9 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
       -- ensure_installed = { "lua_ls" },
+      pip = {
+        upgrade_pip = true,
+      }
     },
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources

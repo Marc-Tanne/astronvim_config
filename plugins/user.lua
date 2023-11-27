@@ -76,5 +76,35 @@ return {
       }
       -- require("nvim-test.runners.pytest").setup {}
     end
+  },
+  {
+    "ojroques/nvim-osc52",
+    lazy = false,
+    config = function()
+      require('osc52').setup {
+        trim = true
+      }
+      local function copy()
+        if vim.v.event.operator == 'y' and vim.v.event.regname == 'a' then
+          require('osc52').copy_register('a')
+        end
+      end
+      vim.api.nvim_create_autocmd('TextYankPost', { callback = copy })
+    end
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    config = function()
+      vim.fn["mkdp#util#install"]()
+      vim.g.mkdp_auto_start = 1
+      vim.g.mkdp_filetypes = {"markdown", "puml"}
+      vim.g.mkdp_open_to_the_world = 1
+      vim.g.mkdp_open_ip = "192.168.56.109"
+      vim.g.mkdp_echo_preview_url = 1
+      vim.g.mkdp_command_for_global = 1
+      vim.g.mkdp_open_to_the_world = 1
+      vim.g.mkdp_theme = "dark"
+    end,
+    ft = { "markdown", "puml" },
   }
 }
