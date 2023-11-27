@@ -49,6 +49,12 @@ return {
     servers = {
       -- "pyright"
     },
+    config = {
+      tsserver = function(opts)
+        opts.root_dir = require("lspconfig.util").root_pattern(".git")
+        return opts
+      end,
+    },
   },
   -- Configure require("lazy").setup() options
   lazy = {

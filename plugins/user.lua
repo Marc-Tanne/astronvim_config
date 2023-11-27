@@ -74,7 +74,6 @@ return {
           typescriptreact = "nvim-test.runners.jest",
         }
       }
-      -- require("nvim-test.runners.pytest").setup {}
     end
   },
   {
